@@ -65,15 +65,11 @@ const Contacts = () => {
                 Object.keys(contactObjects).map(id => {
                     return <>
                         <div key={id}>
+
+                            <hr/>
                             {contactObjects[id].fullName} <br/>
-
-                            <button onClick={() => {
-                                setCurrentId(id)
-                            }}>edit
-                            </button>
-                            |
-
-                            <button onClick={() => onDelete(id)}> delete</button>
+                            <button onClick={() => {setCurrentId(id)}}>edit</button>
+                            <button onClick={() => onDelete(id)}>delete</button>
 
                         </div>
                     </>
