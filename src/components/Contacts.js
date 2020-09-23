@@ -60,22 +60,25 @@ const Contacts = () => {
             <div className="row">
                 <ContactForm {...({addOrEdit, currentId, contactObjects})}/>
             </div>
-            <ul>
-                {
-                    Object.keys(contactObjects).map(id => {
-                        return <li key={id}>
+
+            <>{
+                Object.keys(contactObjects).map(id => {
+                    return <>
+                        <div key={id}>
                             {contactObjects[id].fullName} <br/>
 
-                            <a onClick={() => {
+                            <button onClick={() => {
                                 setCurrentId(id)
-                            }}>edit </a> |
+                            }}>edit
+                            </button>
+                            |
 
-                            <a onClick={() => onDelete(id)}> delete</a>
+                            <button onClick={() => onDelete(id)}> delete</button>
 
-                        </li>
-                    })
-                }
-            </ul>
+                        </div>
+                    </>
+                })
+            }</>
 
 
         </>
